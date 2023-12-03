@@ -1,0 +1,16 @@
+[package]
+name = "candle-electra"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+anyhow = { version = "1", features = ["backtrace"] }
+candle-core = { git = "https://github.com/huggingface/candle.git", rev = "b5c283e86f18aa653e64d8c3894d8691d318bde7", package = "candle-core" }
+candle-nn = { git = "https://github.com/huggingface/candle.git", rev = "b5c283e86f18aa653e64d8c3894d8691d318bde7", package = "candle-nn" }
+candle-transformers = { git = "https://github.com/huggingface/candle.git", rev = "b5c283e86f18aa653e64d8c3894d8691d318bde7", package = "candle-transformers" }
+safetensors = { version = "0.3.1" }
+serde = "1.0"
+serde_json = "1.0"
+tokenizers = { version = "0.13.4", default-features = false, features = ["onig"] }
