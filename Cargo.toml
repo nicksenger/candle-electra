@@ -1,16 +1,30 @@
 [package]
 name = "candle-electra"
-version = "0.1.0"
-edition = "2021"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "Candle port of ELECTRA"
+version.workspace = true
+edition.workspace = true
+authors.workspace = true
+license.workspace = true
+repository.workspace = true
 
 [dependencies]
-anyhow = { version = "1", features = ["backtrace"] }
-candle-core = { git = "https://github.com/huggingface/candle.git", rev = "b5c283e86f18aa653e64d8c3894d8691d318bde7", package = "candle-core" }
-candle-nn = { git = "https://github.com/huggingface/candle.git", rev = "b5c283e86f18aa653e64d8c3894d8691d318bde7", package = "candle-nn" }
-candle-transformers = { git = "https://github.com/huggingface/candle.git", rev = "b5c283e86f18aa653e64d8c3894d8691d318bde7", package = "candle-transformers" }
-safetensors = { version = "0.3.1" }
+candle-core.workspace = true
+candle-nn.workspace = true
+serde.workspace = true
+
+[workspace]
+members = [
+    "examples/*",
+]
+
+[workspace.package]
+version = "0.1.0"
+authors = ["Nick Senger <dev@nsenger.com>"]
+edition = "2021"
+license = "MIT"
+repository = "https://github.com/nicksenger/candle-electra"
+
+[workspace.dependencies]
+candle-core = "0.3"
+candle-nn = "0.3"
 serde = "1.0"
-serde_json = "1.0"
-tokenizers = { version = "0.13.4", default-features = false, features = ["onig"] }
